@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    group:
+      devMac: "devMac,common"
+---
+spring:
+  config:
+    activate:
+      on-profile: devMac
+  servlet:
+    multipart:
+      max-file-size: 10GB
+      max-request-size: 10GB
+  datasource:
+    hikari:
+      dbType: MARIA
+      username: sa
+      dbPort: 3306
+      dbVersion: 10.5
+      dbIp: 192.168.0.94
+      dbName: STUDIO
+      password: sm1418!1662
+      jdbc-url: jdbc:mysql://192.168.0.94:3306/studio?zeroDateTimeBehavior=convertToNull
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      connectionTimeout : 40000
+      auto-commit: true
+      workspaceId: ADMIN
+      maximumPoolSize: 10
+      maxLifetime: 35000
+file:
+  upload:
+    path: /Users/kimjaehee/WORKCODE/repository/attaches
+    include:
+      type: psd,ai,asj,json,bmp,hwp,jpg,png,txt,csv,xls,xlsx,doc,docx,ppt,pptx,jpeg,pdf,mp3,mp4,ico,gif,svg,jdf,mfi,zip,egg,alz,tar,tbz,tgz,lzh,zar,iso,msi,exe,
+  download:
+    path: /repository/attaches/
+default:
+  debugDomain:
+  debugDBip: 192.168.0.94
+  workspaceId: studio0
+redis:
+  host: 192.168.0.94
+  port: 6379
